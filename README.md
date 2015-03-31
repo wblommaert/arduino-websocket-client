@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## Websocket Client and Server for Arduino
 
 This is a simple library that implements a Websocket client and server running on an Arduino.
@@ -25,4 +24,3 @@ Thank you to github user ejeklint for the excellent starting point for this libr
 =======
 # arduino-websocket-client
 Arduino Websocket Client
->>>>>>> bd3a6f79a1ce326cc69fa909133950383a279367
