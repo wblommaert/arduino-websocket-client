@@ -1,26 +1,23 @@
-## Websocket Client and Server for Arduino
+## Websocket Client for Arduino
 
-This is a simple library that implements a Websocket client and server running on an Arduino.
+This is a simple library that implements a Websocket client running on an Arduino.
 
 ### Getting started
 
-The example WebSocketServer.html file should be served from any web server you have access to. Remember to change the  URL in it to your Arduino. The examples are based on using a WiFly wireless card to connect. If you're using ethernet instead you'll need to swap out the client class.
-
-Install the library to "libraries" folder in your Arduino sketchbook folder. For example, on a mac that's `~/Documents/Arduino/libraries`.
+Install the library to "libraries" folder in your Arduino sketchbook folder. For example, on a Mac that's `~/Documents/Arduino/libraries`, while on Windows it can be found under `C:/Users/%username%/Documents/Arduino/libraries`.
 
 Try the examples to ensure that things work.
 
-Start playing with your own code!
+Start playing with your own code! I will be adding my own implementation to the examples soon, which provides a toggle for WiFi and Ethernet clients, depending on which one you're using. The original library only supported the EthernetClient.
 
 ### Notes
-Inside of the WebSocketServer class there is a compiler directive to turn on support for the older "Hixie76" standard. If you don't need it, leave it off as it greatly increases the memory required.
 
-Because of limitations of the current Arduino platform (Uno at the time of this writing), this library does not support messages larger than 65535 characters. In addition, this library only supports single-frame text frames. It currently does not recognize continuation frames, binary frames, or ping/pong frames.
+This library has been enhanced and supports messages larger than 65535 characters. Do NOT try this on an Arduino Uno though, as that platform has been reported to fail using such large messages. In addition, this library supports single-frame text frames, continuation frames, binary frames, and ping/pong frames.
+
+### Websocket Server
+
+The Websocket server that is included in this repository is the original version by [brandenhall](https://github.com/brandenhall/Arduino-Websocket), which in turn is based on [ejeklint](https://github.com/ejeklint/ArduinoWebsocketServer). All credit goes to them as I have no plans to further improve this for now.
 
 ### Credits
-Thank you to github user ejeklint for the excellent starting point for this library. From his original Hixie76-only code I was able to add support for RFC 6455 and create the WebSocket client.
 
-- Branden
-=======
-# arduino-websocket-client
-Arduino Websocket Client
+Thank you to Github user [ejeklint](https://github.com/ejeklint) for the excellent starting point for this library. From his original Hixie76-only code [Branden](https://github.com/brandenhall) was able to add support for RFC 6455 and create the WebSocket client. I enabled the support for messages larger than 65535 characters based off Javascript and PHP code. Note that this won't work on the Arduino Uno due to platform restrictions.
