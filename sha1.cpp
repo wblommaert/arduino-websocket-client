@@ -1,6 +1,7 @@
 #include <string.h>
-#include <avr/io.h>
-#include <avr/pgmspace.h>
+// Uncomment this if you run into problems. The comments are here to allow the library to work on Arduino Due
+//#include <avr/io.h>
+//#include <avr/pgmspace.h>
 #include "sha1.h"
 
 #define SHA1_K0 0x5a827999
